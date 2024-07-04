@@ -10,10 +10,10 @@ import java.util.Set;
  * {@link ProductDaoImpl} represents a Data Access Object (DAO) for products.
  * The implementation is simplified, so it just uses {@link HashSet} to store.
  * <p>
- * todo: 1. Implement a method {@link ProductDao#add(Product)} that store new product into the set
+ * todo: 1. Implement a method {@link IProductDao#add(Product)} that store new product into the set
  * todo: 2. Implement a method {@link ProductDaoImpl#findAll()} that returns a set of all products
  */
-public class ProductDaoImpl implements ProductDao{
+public class ProductDaoImpl implements IProductDao {
     private final Set<Product> products = new HashSet<>();
 
     /**

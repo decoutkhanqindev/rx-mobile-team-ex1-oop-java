@@ -5,7 +5,7 @@ import service.Product;
 
 import java.util.Set;
 
-public interface ProductDao {
+public interface IProductDao {
     boolean add(@NotNull Product product);
     Set<Product> findAll();
 }
