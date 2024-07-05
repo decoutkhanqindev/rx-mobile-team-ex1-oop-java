@@ -1,5 +1,7 @@
 package factory;
 
+import data.IProductDao;
+import data.ProductDaoImpl;
 import service.ProductService;
 
 /**
@@ -14,7 +16,10 @@ public class ProductServiceFactory {
      *
      * @return ProductService
      */
+
+    private final IProductDao dao = new ProductDaoImpl();
+
     public ProductService createProductService() {
-        return new ProductService();
+        return new ProductService(dao);
     }
 }
