@@ -47,4 +47,8 @@ public class ProductService {
         }
         return productList;
     }
+
+    public void printProducts() {
+        System.out.println(dao.findAll());
+    }
 }
