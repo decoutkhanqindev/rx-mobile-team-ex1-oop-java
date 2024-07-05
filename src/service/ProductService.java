@@ -1,5 +1,6 @@
 package service;
 
+import data.IProductDao;
 import data.ProductDaoImpl;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,10 +15,10 @@ import java.util.Set;
  * TODO: 2. Using {@link ProductDaoImpl} implement method {@link ProductService#searchProducts(String)}
  */
 public class ProductService {
-    private final ProductDaoImpl dao;
+    private final IProductDao dao;
 
-    public ProductService() {
-        dao = new ProductDaoImpl();
+    public ProductService(IProductDao dao) {
+        this.dao = dao;
     }
 
     /**
