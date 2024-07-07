@@ -34,7 +34,6 @@ public class ProductDaoImpl implements IProductDao {
      */
     @Override
     public Set<Product> findAll() {
-        if (products.isEmpty()) return null;
         return products;
     }
 }
