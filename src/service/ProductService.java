@@ -39,8 +39,8 @@ public class ProductService {
      * @return a list of found products
      */
     public List<Product> searchProducts(@NotNull String query) {
-        Set<Product> productSet = dao.findAll();
-//        List<Product> productList = new ArrayList<>();
+        Set<Product> productsSet = dao.findAll();
+//        List<Product> productsList = new ArrayList<>();
 //        for (Product product : productSet) {
 //            if (product.getName().contains(query) || product.getDescription().contains(query)) {
 //                productList.add(product);
@@ -48,7 +48,7 @@ public class ProductService {
 //        }
 //        return productList;
 
-        return productSet.stream()
+        return productsSet.stream()
                 .filter(product -> product.getName().contains(query) || product.getDescription().contains(query))
                 .collect(Collectors.toList());
     }
