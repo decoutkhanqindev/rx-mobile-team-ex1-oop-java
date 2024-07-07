@@ -4,7 +4,6 @@ import data.IProductDao;
 import data.ProductDaoImpl;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -40,13 +39,6 @@ public class ProductService {
      */
     public List<Product> searchProducts(@NotNull String query) {
         Set<Product> productsSet = dao.findAll();
-//        List<Product> productsList = new ArrayList<>();
-//        for (Product product : productSet) {
-//            if (product.getName().contains(query) || product.getDescription().contains(query)) {
-//                productList.add(product);
-//            }
-//        }
-//        return productList;
 
         return productsSet.stream()
                 .filter(product -> product.getName().contains(query) || product.getDescription().contains(query))
