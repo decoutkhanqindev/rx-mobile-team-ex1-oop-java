@@ -45,6 +45,6 @@ public class Main {
         productService.addProduct(samsungGalaxyS21);
         productService.addProduct(samsungGalaxyS21Ultra);
         productService.printProducts();
-//        System.out.println(productService.searchProducts("iPhone"));
+        System.out.println(productService.searchProducts("iPhone"));
     }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * {@link ProductService} provides an API that allows to manage {@link Product}s.
@@ -39,13 +40,17 @@ public class ProductService {
      */
     public List<Product> searchProducts(@NotNull String query) {
         Set<Product> productSet = dao.findAll();
-        List<Product> productList = new ArrayList<>();
-        for (Product product : productSet) {
-            if (product.getName().contains(query) || product.getDescription().contains(query)) {
-                productList.add(product);
-            }
-        }
-        return productList;
+//        List<Product> productList = new ArrayList<>();
+//        for (Product product : productSet) {
+//            if (product.getName().contains(query) || product.getDescription().contains(query)) {
+//                productList.add(product);
+//            }
+//        }
+//        return productList;
+
+        return productSet.stream()
+                .filter(product -> product.getName().contains(query) || product.getDescription().contains(query))
+                .collect(Collectors.toList());
     }
 
     public void printProducts() {
