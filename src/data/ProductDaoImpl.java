@@ -34,6 +34,6 @@ public class ProductDaoImpl implements IProductDao {
      */
     @Override
     public Set<Product> findAll() {
-        return products;
+        return new HashSet<>(products);
     }
 }
